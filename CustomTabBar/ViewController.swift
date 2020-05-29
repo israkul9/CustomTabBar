@@ -54,6 +54,10 @@ class ViewController: UIViewController {
     @objc func tabBarItemButtonAction (_ button:UIButton){
         
         
+        
+                              
+                              NotificationCenter.default.post(name: Notification.Name("ADD_DOCUMENT_OF_DROP_BOX"), object: nil, userInfo: nil)
+        
         self.tabBarViewController.selectedIndex = button.tag
     }
 }

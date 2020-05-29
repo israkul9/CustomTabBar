@@ -12,13 +12,26 @@ class SettingViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(backRootVC), name: NSNotification.Name(rawValue: "ADD_DOCUMENT_OF_DROP_BOX"), object: nil)
         self.view.backgroundColor = .red
         
         tabBarController?.tabBar.isHidden = true
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func backRootVC(notification: NSNotification){
+           
+        navigationController?.popViewController(animated: true)
+           
+           do{
+               
+           }
+           catch {
+               print(error)
+           }
+           
+       }
     
 
     /*
